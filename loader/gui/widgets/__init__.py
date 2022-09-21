@@ -1,0 +1,7 @@
+from loader.gui.widgets.display_video_widget import DisplayVideoDetailsWidget
+from loader.gui.widgets.find_widget import FindWidget
+from loader.gui.widgets.load_widget import LoadScreenWidget
+from loader.gui.widgets.content_widget import ContentWidget
+from loader.gui.widgets.progressive_video_streams_widget import ProgressiveVideoStreamsWidget
+from loader.gui.widgets.dash_video_streams_widget import DashVideoStreamsWidget
+from loader.gui.widgets.dash_audio_streams_widget import DashAudioStreamsWidget
