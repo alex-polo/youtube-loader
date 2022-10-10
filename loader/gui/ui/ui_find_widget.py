@@ -26,7 +26,7 @@ class Ui_FindWidget(object):
         self.logo.setMaximumSize(QtCore.QSize(160, 56))
         self.logo.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.logo.setText("")
-        self.logo.setPixmap(QtGui.QPixmap("d:\\python\\youtube-loader\\src\\ui\\../img/youtube_logo.png"))
+        self.logo.setPixmap(QtGui.QPixmap("src/img/youtube_logo.png"))
         self.logo.setScaledContents(True)
         self.logo.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.logo.setObjectName("logo")
