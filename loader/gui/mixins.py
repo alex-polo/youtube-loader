@@ -75,7 +75,7 @@ class MainWindowMixin:
         elif grubber_success_load.stream_type == StreamType.DashAudio:
             logger.debug(f'downloaded dash audio, file {grubber_success_load.downloaded_filename_audio}.')
             self._event_print_process_window(
-                message=f'Скачан аудиопоток: {grubber_success_load.downloaded_filename_audio}\nПереконвертирование:\n')
+                message=f'Скачан аудиопоток: {grubber_success_load.downloaded_filename_audio}\nПереконвертирование:')
             self._ffmpeg_convert_audio_ffmpeg(grubber_success_load=grubber_success_load)
         elif grubber_success_load.stream_type == StreamType.DasVideo:
             logger.debug(f'downloaded dash audio and video, files:\n'
