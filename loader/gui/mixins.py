@@ -85,7 +85,7 @@ class MainWindowMixin:
                 message=f'Скачаны временные файлы:\n'
                         f'Видеопоток: {grubber_success_load.downloaded_filename_video}.\n'
                         f'Аудиопоток: {grubber_success_load.downloaded_filename_audio}.\n'
-                        f'\nОбъединение аудио и видео потоков.:\n')
+                        f'\nОбъединение аудио и видео потоков.:')
             self._ffmpeg_concat_video_and_audio(grubber_success_load=grubber_success_load)
 
     def _event_error_download_video(self, grubber_error) -> None:
