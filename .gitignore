@@ -3,5 +3,6 @@
 .env
 __pycache__/
 venv/
-src\ffmpeg\linux64\
-src\ffmpeg\win64\
+src/ffmpeg/linux64/
+src/ffmpeg/win64/
+temp/

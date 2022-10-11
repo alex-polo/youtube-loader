@@ -123,13 +123,18 @@ class MainWindowMixin:
         self._ffmpeg_start(ffmpeg_command=ffmpeg_command)
 
     def _ffmpeg_start(self, ffmpeg_command: list) -> None:
-        if self._qprocess is None:
-            self._qprocess = QProcess()
-            self._qprocess.readyReadStandardOutput.connect(self._ffmpeg_handle_stdout)
-            self._qprocess.readyReadStandardError.connect(self._ffmpeg_handle_stderr)
-            self._qprocess.finished.connect(self._ffmpeg_process_finished)
-            logger.debug('start ffmpeg process')
-            self._qprocess.start(self._ffmpeg_config.ffmpeg_path, ffmpeg_command)
+        if os.path.exists(self._ffmpeg_config.ffmpeg_path):
+            if self._qprocess is None:
+                self._qprocess = QProcess()
+                self._qprocess.readyReadStandardOutput.connect(self._ffmpeg_handle_stdout)
+                self._qprocess.readyReadStandardError.connect(self._ffmpeg_handle_stderr)
+                self._qprocess.finished.connect(self._ffmpeg_process_finished)
+                logger.debug('start ffmpeg process')
+                self._qprocess.start(self._ffmpeg_config.ffmpeg_path, ffmpeg_command)
+        else:
+            logger.error('Error. ffmpeg executable not found.')
+            self._event_print_process_window(message='Ошибка. Не найден исполняемый файл ffmpeg.')
+            self._process_window.finishStatus()
 
     def _ffmpeg_handle_stderr(self) -> None:
         data = self._qprocess.readAllStandardError()
